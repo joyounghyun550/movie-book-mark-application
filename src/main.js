@@ -55,11 +55,11 @@ async function renderMovies() {
 
       movieDiv.innerHTML = `
         <div class="photo movie_content" id="movie_content_${idx}">
-          <img src="https://image.tmdb.org/t/p/w500${movie["poster_path"]}" alt="${movie["title"]}">
+          <img class='photo' src="https://image.tmdb.org/t/p/w500${movie["poster_path"]}" alt="${movie["title"]}">
         </div>
         <div class="movie_content">
-          <h5 class='title'>${movie["title"]}</h5>
-          <span class='rating'>평점:  ${movie["vote_average"]}</span>
+          <h4 class='title'>${movie["title"]}</h4>
+          <h5 class='rating'>평점:  ${movie["vote_average"]}</h5>
         </div>
       `;
 
@@ -79,14 +79,24 @@ async function renderMovies() {
 // 영화 상세 정보를 보여주는 모달
 function showModal(movie) {
   const modal = document.getElementById("modal_container");
-  const modalContent = document.getElementById("modal_content");
+  const poster = document.getElementById("poster_path");
+  const modal_title = document.getElementById("modal_title");
+  const view = document.getElementById("overview");
+  const date = document.getElementById("release_date");
+  const rating = document.getElementById("vote_average");
+  const bookMarkBtn = document.getElementById("book-mark-btn");
 
-  modalContent.innerHTML = `
-    <h2>${movie.title}</h2>
-    <p>평점: ${movie.vote_average}</p>
-    <p>${movie.overview}</p>
-    <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
-  `;
+  poster.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${movie["poster_path"]}" alt="${movie["title"]}">`;
+
+  modal_title.innerHTML = `<h2>${movie["title"]}</h2>`;
+
+  view.innerHTML = `<p>${movie["overview"]}</p>`;
+
+  date.innerHTML = `<p>개봉일 : ${movie["release_date"]}</p>`;
+
+  rating.innerHTML = `<p>평점 : ${movie["vote_average"]}</p>`;
+
+  bookMarkBtn.innerHTML = `<a>북마크 추가</a>`;
 
   modal.style.display = "flex"; // 모달 열기
   disableScroll();

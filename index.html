@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    <script type="module" src="./src/main.js"></script>
   </head>
   <body>
     <div class="Header">
@@ -19,10 +18,22 @@
       <span class="book-mark-look">북마크 보기</span>
     </div>
     <div class="movie-container"></div>
-
-    <div id="modal_container" style="display: none">
-      <div id="modal_content"></div>
-      <button id="close-modal">닫기</button>
+    <div id="modal_container">
+      <div id="modal_content">
+        <span class="closeBtn" id="close-modal">
+          <img src="/image/close.png" alt="닫기버튼" />
+        </span>
+        <div id="poster_path"></div>
+        <div class="madal_info">
+          <h2 id="modal_title"></h2>
+          <p id="overview"></p>
+          <p id="release_date"></p>
+          <p id="vote_average"></p>
+        </div>
+        <button class="btn-hover" id="book-mark-btn">북마크 추가</button>
+      </div>
     </div>
+    <!-- js --->
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>
