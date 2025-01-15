@@ -1,4 +1,4 @@
-# my-solo-project
+# movie-book-mark-application
 
 # 영화 북마크 애플리케이션
 
@@ -24,17 +24,14 @@
 1. 이 저장소를 클론합니다.
 
    ```bash
-   git clone https://github.com/yourusername/movie-bookmark-app.git
+   git clone https://github.com/joyounghyun550/movie-book-mark-application.git
 
    ```
 
 2. 프로젝트 디렉토리로 이동합니다.
-   cd movie-bookmark-app
+   cd movie-book-mark-application
 
-3. 필요한 라이브러리를 설치합니다.
-   npm install sweetalert2
-
-4. index.html 파일을 웹 브라우저에서 엽니다.
+3. index.html 파일을 웹 브라우저에서 엽니다.
 
 ## 사용법
 
