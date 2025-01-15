@@ -19,6 +19,7 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
+  gap: 10px;
 }
 
 #searchBar {
@@ -31,7 +32,8 @@ body {
 }
 
 .bookMarkLook {
-  margin-top: 20px;
+  justify-items: center;
+  font-size: 18px;
 }
 
 .movieContainer {
