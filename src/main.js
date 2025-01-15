@@ -11,7 +11,7 @@ const CLOSE_MODAL_ID = "closeModal"; // 모달 닫기 버튼의 ID
 const MODAL_CONTAINER_ID = "modalContainer"; // 모달 컨테이너의 ID
 
 // 북마크를 토글하는 함수
-function toggleBookmark(movie) {
+async function toggleBookmark(movie) {
   const bookMarkList = localStorageUtil.get("bookMarkItem") || []; // 로컬 스토리지에서 북마크 목록을 가져옵니다.
   const isBookmarked = localStorageUtil.exists("bookMarkItem", movie.id); // 영화가 북마크에 있는지 확인합니다.
 
@@ -31,14 +31,13 @@ function toggleBookmark(movie) {
     bookMarkList.push(movie); // 북마크 목록에 추가합니다.
     localStorageUtil.set("bookMarkItem", bookMarkList); // 업데이트된 북마크 목록을 로컬 스토리지에 저장합니다.
     // 사용자에게 알림
-    Swal.fire({
+    const result = await Swal.fire({
       icon: "success",
       title: "북마크 추가 되었습니다.",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        hideModal(); // 모달을 닫습니다.
-      }
     });
+    if (result.isConfirmed) {
+      hideModal(); // 모달을 닫습니다.
+    }
   }
   updateMovieList(); // 영화 목록을 즉시 업데이트합니다.
 }
