@@ -1,5 +1,5 @@
 // API 요청을 위한 옵션 설정
-const API_URL =
+const apiUrl =
   "https://api.themoviedb.org/3/movie/popular?language=ko-KR&page="; // API URL 상수화
 const options = {
   method: "GET", // HTTP 메서드 설정 (GET 요청)
@@ -34,7 +34,7 @@ async function fetchMovies(totalPages = 10) {
   // 요청할 페이지 수만큼 loadJson 함수를 호출하여 요청 배열 생성
   const pageRequests = Array.from(
     { length: totalPages },
-    (_, i) => loadJson(`${API_URL}${i + 1}`) // 각 페이지에 대한 API 요청 생성
+    (_, i) => loadJson(`${apiUrl}${i + 1}`) // 각 페이지에 대한 API 요청 생성
   );
 
   // 모든 페이지 요청을 병렬로 처리하고 결과를 기다림

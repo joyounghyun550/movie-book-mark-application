@@ -8,15 +8,16 @@
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="/image/title_icon.png"
-      <link
+      href="./image/title_icon.png"
+    />
+    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
   </head>
   <body>
-    <div class="Header">
+    <div class="header">
       <h1 class="title">영화 검색</h1>
       <input
         type="text"
@@ -25,22 +26,22 @@
         name="search"
         autofocus
       />
-      <a class="book-mark-look">북마크 보기</a>
+      <a class="bookMarkLook">북마크 보기</a>
     </div>
-    <div class="movie-container"></div>
-    <div id="modal_container">
-      <div id="modal_content">
-        <span class="closeBtn" id="close-modal">
+    <div class="movieContainer"></div>
+    <div id="modalContainer">
+      <div id="modalContent">
+        <span class="closeBtn" id="closeModal">
           <img src="/image/close.png" alt="닫기버튼" />
         </span>
-        <div id="poster_path"></div>
-        <div class="modal_info">
-          <h2 id="modal_title"></h2>
+        <div id="posterPath"></div>
+        <div class="modalInfo">
+          <h2 id="modalTitle"></h2>
           <p id="overview"></p>
-          <p id="release_date"></p>
-          <p id="vote_average"></p>
+          <p id="releaseDate"></p>
+          <p id="voteAverage"></p>
         </div>
-        <button class="btn-hover" id="book-mark-btn">북마크 추가</button>
+        <button class="btnHover" id="bookMarkBtn">북마크 추가</button>
       </div>
     </div>
     <!-- js --->

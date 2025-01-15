@@ -4,11 +4,11 @@ import { renderMovies, showModal, hideModal } from "./ui.js"; // UI 관련 함�
 // 상수 정의
 const VIEW_ALL = "전체 보기"; // 전체 영화 보기 텍스트
 const VIEW_BOOKMARK = "북마크 보기"; // 북마크 영화 보기 텍스트
-const MOVIE_CONTAINER_SELECTOR = ".movie-container"; // 영화 목록을 표시할 컨테이너의 선택자
-const BOOKMARK_LOOK_SELECTOR = ".book-mark-look"; // 북마크 보기 버튼의 선택자
+const MOVIE_CONTAINER_SELECTOR = ".movieContainer"; // 영화 목록을 표시할 컨테이너의 선택자
+const BOOKMARK_LOOK_SELECTOR = ".bookMarkLook"; // 북마크 보기 버튼의 선택자
 const SEARCH_BAR_ID = "searchBar"; // 검색 바의 ID
-const CLOSE_MODAL_ID = "close-modal"; // 모달 닫기 버튼의 ID
-const MODAL_CONTAINER_ID = "modal_container"; // 모달 컨테이너의 ID
+const CLOSE_MODAL_ID = "closeModal"; // 모달 닫기 버튼의 ID
+const MODAL_CONTAINER_ID = "modalContainer"; // 모달 컨테이너의 ID
 
 // 북마크를 토글하는 함수
 function toggleBookmark(movie) {
@@ -25,7 +25,6 @@ function toggleBookmark(movie) {
     }).then((result) => {
       if (result.isConfirmed) {
         hideModal(); // 모달을 닫습니다.
-        updateMovieList(); // 영화 목록을 즉시 업데이트합니다.
       }
     });
   } else {
@@ -38,10 +37,10 @@ function toggleBookmark(movie) {
     }).then((result) => {
       if (result.isConfirmed) {
         hideModal(); // 모달을 닫습니다.
-        updateMovieList(); // 영화 목록을 즉시 업데이트합니다.
       }
     });
   }
+  updateMovieList(); // 영화 목록을 즉시 업데이트합니다.
 }
 
 // 영화 데이터를 가져오고 렌더링하는 함수
