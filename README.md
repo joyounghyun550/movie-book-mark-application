@@ -32,12 +32,19 @@
 
 3. index.html 파일을 웹 브라우저에서 엽니다.
 
-4. 트러블 슈팅
+4. 배포
+
+   https://joyounghyun550.github.io/movie-book-mark-application/
+   
+5. 트러블 슈팅
+
    grid를 이용한 리스트 반응형으로 구현하기
+
    https://yyy3489.tistory.com/21
 
-기존의 검색 데이터를 이용한 북마크 안의 검색
-https://yyy3489.tistory.com/22
+   기존의 검색 데이터를 이용한 북마크 안의 검색
+   
+   https://yyy3489.tistory.com/22
 
 ## 사용법
 
