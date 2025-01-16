@@ -64,6 +64,11 @@ body {
 .movie {
   height: auto;
   width: 250px;
+  transition: all 0.5s ease;
+}
+
+.movie:hover {
+  transform: scale(1.1);
 }
 
 .title {
