@@ -35,7 +35,7 @@
 4. 배포
 
    https://joyounghyun550.github.io/movie-book-mark-application/
-   
+
 5. 트러블 슈팅
 
    grid를 이용한 리스트 반응형으로 구현하기
@@ -43,7 +43,7 @@
    https://yyy3489.tistory.com/21
 
    기존의 검색 데이터를 이용한 북마크 안의 검색
-   
+
    https://yyy3489.tistory.com/22
 
 ## 사용법
@@ -59,13 +59,21 @@
 ## 코드 설명
 
 fetch-movies.js : TMDB API를 통해 인기 영화 데이터를 비동기적으로 가져오는 JavaScript 모듈입니다.
+
 handle-book-mark.js : 로컬 스토리지에서 영화 북마크를 관리하고, 북마크 추가/제거 및 목록 업데이트 기능을 제공하는 JavaScript 모듈입니다.
+
 handle-modal.js : 영화 클릭 시 모달을 표시하고, 모달을 닫는 이벤트를 처리하는 JavaScript 모듈입니다.
+
 handle-search.js : 사용자가 입력한 검색어에 따라 영화 목록을 필터링하고 업데이트하는 디바운스된 검색 이벤트 핸들러를 포함하는 JavaScript 모듈입니다.
+
 modal.js : 영화 정보를 기반으로 모달의 내용을 업데이트하고 표시하며, 북마크 기능을 관리하는 JavaScript 모듈입니다.
+
 render-movies.js : 영화 데이터를 가져오고 필터링하여 HTML 요소로 렌더링하며, 에러 메시지를 처리하는 JavaScript 모듈입니다.
+
 debounce.js : 지정된 지연 시간 후에만 함수를 실행하도록 하는 디바운스 기능을 제공하는 JavaScript 함수입니다.
+
 local-storage-util.js : 로컬 스토리지에서 데이터를 가져오고, 저장하며, 삭제 및 존재 여부를 확인하는 유틸리티 메서드를 제공하는 JavaScript 객체입니다.
+
 main.js: 영화 목록을 업데이트하고, 다양한 사용자 인터랙션을 처리하기 위한 이벤트 리스너를 설정하는 초기화 기능을 포함한 JavaScript 모듈입니다.
 
 ## 기여
