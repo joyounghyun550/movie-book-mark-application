@@ -14,9 +14,7 @@ async function fetchMoviesData() {
     return movies; // 영화 데이터 반환
   } catch (error) {
     console.error("영화 데이터를 불러오는 데 실패했습니다.", error); // 에러 로그
-    renderErrorMessage(
-      "영화 데이터를 가져오는 데 문제가 발생했습니다. 나중에 다시 시도해주세요." // 에러 메시지 렌더링
-    );
+    renderErrorMessage(error); // 에러 메시지 렌더링
     return []; // 빈 배열 반환
   }
 }

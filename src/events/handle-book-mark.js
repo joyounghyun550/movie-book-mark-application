@@ -1,6 +1,5 @@
 // handleBookmark.js;
-import { localStorageUtil } from "../api/local-storage-util.js";
-import { showNotification } from "../ui/notification.js";
+import { localStorageUtil } from "../untils/local-storage-util.js";
 import { updateMovieList } from "../ui/render-movies.js";
 import {
   STORAGE_KEYS,
@@ -8,6 +7,7 @@ import {
   VIEW_BOOKMARK,
   VIEW_ALL,
 } from "../main.js";
+import { hideModal } from "../ui/modal.js";
 
 // 로컬 스토리지에서 북마크 목록을 가져오는 함수
 function getBookmarkList() {
@@ -15,20 +15,22 @@ function getBookmarkList() {
 }
 
 // 북마크를 토글하는 함수
-async function toggleBookmark(movie) {
+function toggleBookmark(movie) {
   const bookMarkList = getBookmarkList(); // 현재 북마크 목록 가져오기
   const isBookmarked = localStorageUtil.exists(STORAGE_KEYS.BOOKMARK, movie.id); // 영화가 북마크에 있는지 확인
 
   if (isBookmarked) {
     // 영화가 이미 북마크에 있다면
     localStorageUtil.remove(STORAGE_KEYS.BOOKMARK, movie.id); // 북마크에서 제거
-    await showNotification("북마크 제거 되었습니다."); // 알림 표시
+    alert("북마크 제거 되었습니다."); // 알림 표시
+    hideModal();
     updateMovieList(); // 영화 목록 업데이트
   } else {
     // 영화가 북마크에 없다면
     bookMarkList.push(movie); // 북마크 목록에 추가
     localStorageUtil.set(STORAGE_KEYS.BOOKMARK, bookMarkList); // 로컬 스토리지에 저장
-    await showNotification("북마크 추가 되었습니다."); // 알림 표시
+    alert("북마크 추가 되었습니다."); // 알림 표시
+    hideModal();
   }
 
   DOM_ELEMENTS.searchField.value = ""; // 검색 입력 필드 초기화

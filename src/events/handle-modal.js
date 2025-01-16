@@ -3,7 +3,7 @@ import { SELECTORS } from "../main.js";
 import { getMoviesToRender } from "../ui/render-movies.js";
 import { showModal, hideModal } from "../ui/modal.js";
 import { toggleBookmark } from "./handle-book-mark.js";
-import { localStorageUtil } from "../api/local-storage-util.js";
+import { localStorageUtil } from "../untils/local-storage-util.js";
 
 // 영화 클릭 이벤트 핸들러
 async function handleMovieClick(event) {
