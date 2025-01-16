@@ -1,4 +1,3 @@
-// handleModal.js
 import { SELECTORS } from "../main.js";
 import { getMoviesToRender } from "../ui/render-movies.js";
 import { showModal, hideModal } from "../ui/modal.js";

@@ -1,4 +1,3 @@
-// renderMovies.jsa
 import { DOM_ELEMENTS, VIEW_ALL } from "../main.js"; // main.js에서 필요한 요소와 상수 가져오기
 import { fetchMovies } from "../api/fetch-movies.js"; // fetchMovies.js에서 fetchMovies 함수 가져오기
 import { filterMovies } from "../events/handle-search.js"; // filterMovies 함수 가져오기
@@ -14,15 +13,22 @@ async function fetchMoviesData() {
     return movies; // 영화 데이터 반환
   } catch (error) {
     console.error("영화 데이터를 불러오는 데 실패했습니다.", error); // 에러 로그
-    renderErrorMessage(error); // 에러 메시지 렌더링
+    renderErrorMessage(error.message); // 에러 메시지 렌더링
     return []; // 빈 배열 반환
   }
 }
 
-// 에러 메시지를 렌더링하는 함수
 function renderErrorMessage(message) {
   if (DOM_ELEMENTS.movieContainer) {
-    DOM_ELEMENTS.movieContainer.innerHTML = `<div class="error-message">${message}</div>`; // 에러 메시지 표시
+    DOM_ELEMENTS.movieContainer.innerHTML = `
+      <div class="error-message">
+        <p>${message}</p>
+        <button id="retry-button">재시도</button>
+      </div>`;
+
+    document
+      .getElementById("retry-button")
+      .addEventListener("click", updateMovieList);
   }
 }
 
@@ -33,19 +39,19 @@ async function getMoviesToRender(isBookmarkedView, search = "") {
 }
 
 // 영화 정보를 HTML 요소로 변환하는 함수
-function createMovieElement(item) {
+function createMovieElement(movie) {
   const movieElement = document.createElement("div"); // 새로운 div 요소 생성
   movieElement.className = "movie"; // 클래스 이름 설정
-  movieElement.setAttribute("data-id", item.id); // 영화 ID를 data-id 속성으로 설정
+  movieElement.setAttribute("data-id", movie.id); // 영화 ID를 data-id 속성으로 설정
 
   // 영화 정보를 포함하는 HTML 구조 설정
   movieElement.innerHTML = `
             <div class="photo movieContent">
-              <img class="photo" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="${item.title}">
+              <img class="photo" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
             </div>
             <div class="movieContent">
-              <h4 class="title">${item.title}</h4>
-              <h5 class="rating">평점: ${item.vote_average}</h5>
+              <h4 class="title">${movie.title}</h4>
+              <h5 class="rating">평점: ${movie.vote_average}</h5>
             </div>`;
 
   return movieElement; // 생성된 영화 요소 반환

@@ -1,4 +1,3 @@
-// handleBookmark.js;
 import { localStorageUtil } from "../utils/local-storage-util.js";
 import { updateMovieList } from "../ui/render-movies.js";
 import {
