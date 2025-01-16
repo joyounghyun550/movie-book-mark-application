@@ -1,4 +1,4 @@
-import { localStorageUtil } from "../api/local-storage-util.js";
+import { localStorageUtil } from "../utils/local-storage-util.js";
 import { updateMovieList } from "../ui/render-movies.js";
 import {
   STORAGE_KEYS,

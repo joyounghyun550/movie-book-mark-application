@@ -34,8 +34,6 @@
 
 4. 배포
 
-   https://joyounghyun550.github.io/movie-book-mark-application/
-
 5. 트러블 슈팅
 
    grid를 이용한 리스트 반응형으로 구현하기
