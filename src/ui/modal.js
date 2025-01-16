@@ -1,36 +1,3 @@
-// 영화 정보를 HTML 요소로 변환하는 함수
-function createMovieElement(item) {
-  const movieElement = document.createElement("div"); // 새로운 div 요소 생성
-  movieElement.className = "movie"; // 클래스 이름 설정
-  movieElement.setAttribute("data-id", item.id); // 영화 ID를 data-id 속성으로 설정
-
-  // 영화 정보를 포함하는 HTML 구조 설정
-  movieElement.innerHTML = `
-            <div class="photo movieContent">
-              <img class="photo" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="${item.title}">
-            </div>
-            <div class="movieContent">
-              <h4 class="title">${item.title}</h4>
-              <h5 class="rating">평점: ${item.vote_average}</h5>
-            </div>`;
-
-  return movieElement; // 생성된 영화 요소 반환
-}
-
-// 영화 목록을 렌더링하는 함수
-function renderMovies(movieData, container) {
-  const fragment = document.createDocumentFragment(); // DocumentFragment 생성 (성능 최적화)
-
-  // 각 영화 데이터에 대해 영화 요소 생성
-  movieData.forEach((item) => {
-    const movieElement = createMovieElement(item); // 영화 요소 생성
-    fragment.appendChild(movieElement); // Fragment에 영화 요소 추가
-  });
-
-  container.innerHTML = ""; // 기존 내용을 비우고
-  container.appendChild(fragment); // Fragment를 한 번에 추가하여 DOM 업데이트
-}
-
 // 모달의 내용을 업데이트하는 함수
 function updateModalContent(movie) {
   const poster = document.getElementById("posterPath"); // 포스터 요소
@@ -49,7 +16,7 @@ function updateModalContent(movie) {
   rating.innerHTML = `<p>평점 : ${movie.vote_average}</p>`;
 }
 
-// 모달을 표시하는 함수
+// 모달을 표시하는 함수 (이벤트 핸들러 설정 포함)
 function showModal(movie, modalUtil) {
   // 모달 내용을 업데이트
   updateModalContent(movie);
@@ -84,10 +51,10 @@ function showModal(movie, modalUtil) {
 function hideModal() {
   const modal = document.getElementById("modalContainer"); // 모달 컨테이너 요소
   const modalContent = document.getElementById("modalContent");
-  modalContent.scrollTop = 0;
+  modalContent.scrollTop = 0; // 모달 내용 스크롤 초기화
   modal.style.display = "none"; // 모달 숨김
   document.body.style.overflow = "auto"; // 스크롤 활성화 (모달이 닫힐 때)
 }
 
-// 외부에서 사용할 함수들을 export
-export { renderMovies, showModal, hideModal }; // renderMovies, showModal, hideModal 함수를 외부에서 사용할 수 있도록 내보냄
+// 그룹화하여 export
+export { updateModalContent, showModal, hideModal };
