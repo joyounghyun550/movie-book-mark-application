@@ -1,4 +1,3 @@
-import { bearer } from "./apikey.js";
 // API 요청을 위한 옵션 설정
 const apiUrl =
   "https://api.themoviedb.org/3/movie/popular?language=ko-KR&page="; // API URL 상수화
@@ -7,7 +6,8 @@ const options = {
   headers: {
     accept: "application/json", // 응답 형식으로 JSON을 요청
     // API 인증을 위한 Bearer 토큰
-    Authorization: bearer,
+    Authorization:
+      "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYjE3YjhmMDhhNjAyY2RjMjI3MTQ4OTNjMGY3ZGUxOCIsIm5iZiI6MTczNjI5NjU0MS43NzcsInN1YiI6IjY3N2RjODVkMzRhNGU3NWU0OTdhZjZiYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Krpv96y0IjpjuT99lDplpNTIJLXQ-jecsbUQC88zo6Y",
   },
 };
 
