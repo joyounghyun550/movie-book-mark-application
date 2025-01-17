@@ -46,6 +46,10 @@
 
    https://yyy3489.tistory.com/22
 
+   git hub 계정 정지 및 복원신청
+
+   https://yyy3489.tistory.com/23
+
 ## 사용법
 
 애플리케이션을 실행하면 영화 목록이 표시됩니다.
