@@ -23,7 +23,7 @@
 1. 이 저장소를 클론합니다.
 
    ```bash
-   git clone https://github.com/joyounghyun550/movie-book-mark-application.git
+
 
    ```
 
@@ -33,8 +33,6 @@
 3. index.html 파일을 웹 브라우저에서 엽니다.
 
 4. 배포
-
-   https://joyounghyun550.github.io/movie-book-mark-application/
 
 5. 트러블 슈팅
 
