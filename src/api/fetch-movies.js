@@ -29,7 +29,7 @@ async function loadJson(url) {
 }
 
 // 영화 데이터를 가져오는 함수
-async function fetchMovies(totalPages = 10) {
+async function fetchMovies(totalPages = 5) {
   const movieDataList = []; // 영화 데이터를 저장할 배열 초기화
   // 요청할 페이지 수만큼 loadJson 함수를 호출하여 요청 배열 생성
   const pageRequests = Array.from(
