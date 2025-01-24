@@ -4,6 +4,32 @@
 
 이 프로젝트는 사용자가 영화 목록을 보고, 북마크를 추가하거나 제거할 수 있는 웹 애플리케이션입니다. 사용자는 검색 기능을 통해 원하는 영화를 쉽게 찾을 수 있으며, 북마크 기능을 통해 관심 있는 영화를 저장 및 제거할 수 있습니다.
 
+## 배포
+
+ ```bash
+ https://joyounghyun550.github.io/movie-book-mark-application/
+ ```
+
+ ## 트러블 슈팅
+
+grid를 이용한 리스트 반응형으로 구현하기
+      
+   ```bash
+   https://yyy3489.tistory.com/21
+   ```
+
+기존의 검색 데이터를 이용한 북마크 안의 검색
+      
+   ```bash
+   https://yyy3489.tistory.com/22
+   ```
+
+git hub 계정 정지 및 복원신청
+      
+   ```bash
+   https://yyy3489.tistory.com/23
+   ```
+
 ## 기능
 
 - 영화 목록 보기
@@ -31,24 +57,6 @@
    cd movie-book-mark-application
 
 3. index.html 파일을 웹 브라우저에서 엽니다.
-
-4. 배포
-
-   https://joyounghyun550.github.io/movie-book-mark-application/
-
-5. 트러블 슈팅
-
-   grid를 이용한 리스트 반응형으로 구현하기
-
-   https://yyy3489.tistory.com/21
-
-   기존의 검색 데이터를 이용한 북마크 안의 검색
-
-   https://yyy3489.tistory.com/22
-
-   git hub 계정 정지 및 복원신청
-
-   https://yyy3489.tistory.com/23
 
 ## 사용법
 
@@ -79,6 +87,7 @@ debounce.js : 지정된 지연 시간 후에만 함수를 실행하도록 하는
 local-storage-util.js : 로컬 스토리지에서 데이터를 가져오고, 저장하며, 삭제 및 존재 여부를 확인하는 유틸리티 메서드를 제공하는 JavaScript 객체입니다.
 
 main.js: 영화 목록을 업데이트하고, 다양한 사용자 인터랙션을 처리하기 위한 이벤트 리스너를 설정하는 초기화 기능을 포함한 JavaScript 모듈입니다.
+
 
 ## 기여
 
